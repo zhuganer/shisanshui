@@ -1,0 +1,15 @@
+#coding:utf-8
+import requests
+
+pay={"userId":"system","password":"123456"}#封装请求参数
+r=requests.post('http://space.test.com/zhzlApp/user/newLogin',data=pay)#发起post登录接口请求
+c=r.json()#接口响应参数json化
+#print(json.dumps(r.json(),encoding='utf-8',ensure_ascii=False,indent=4))#将返回内容通过json格式显示
+
+userId=(c['data']['userId'])#获取userId的值
+print(r.headers)
+token=r.cookies['CIGToken']
+if userId=='SYSTEM':
+    print('登录成功')
+else:
+    print ('登录失败')
