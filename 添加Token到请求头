@@ -1,0 +1,10 @@
+post_url = "http://xxx"
+# 添加token到请求头
+header["token"] = token
+# 如果这个post请求的头部其它参数变了，也可以直接更新
+header["Content-Length"]="9"
+body1 = {
+         "key": "value"
+         }
+post_ret = s.post(post_url, headers=header, data=body1)
+print post_ret.content
