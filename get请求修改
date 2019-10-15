@@ -1,0 +1,15 @@
+#coding:utf-8
+import  requests
+parm={"userId":"YIN","password":"123"}#封装登录参数
+r=requests.get("http://api.shisanshui.rtxux.xyz/auth/vailidate)#发送get请求
+
+c= r.json()#将请求响应response值json格式化
+respon=(c['data']['accountUsers'][0]['userId'])#获取userId的值
+respon2=(c['data']['accountUsers'][1]['userName'])#获取userName值
+if r.status_code ==200:
+    if respon == 'YIN':
+        print ('登录成功')#判断登录的用户是否正确
+    else :
+        print ('登录失败')
+else:
+    print('报错了')
