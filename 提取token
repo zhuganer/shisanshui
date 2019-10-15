@@ -1,0 +1,4 @@
+s = requests.session()
+login_url = "http://xxx.login"   #　自己找带token网址
+login_ret = s.post(login_url, headers=header, data=body)
+# 这里token在返回的json里，可以直接提取
